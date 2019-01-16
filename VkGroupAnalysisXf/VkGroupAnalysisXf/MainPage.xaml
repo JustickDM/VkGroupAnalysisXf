@@ -1,14 +1,70 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:local="clr-namespace:VkGroupAnalysisXf"
              x:Class="VkGroupAnalysisXf.MainPage">
 
-    <StackLayout>
-        <!-- Place new controls here -->
-        <Label Text="Welcome to Xamarin.Forms!" 
-           HorizontalOptions="Center"
-           VerticalOptions="CenterAndExpand" />
-    </StackLayout>
+	<ContentPage.Content>
+		<StackLayout VerticalOptions="FillAndExpand">
+			<ActivityIndicator IsRunning="{Binding IsBusy}"
+						       IsVisible="{Binding IsBusy}"
+						   Style="{StaticResource activityIndicatorLoginStyle}"/>
+			<ListView ItemsSource="{Binding Users}"
+                  SeparatorVisibility="None"
+                  HasUnevenRows="True"
+                  SelectionMode="None"
+                  VerticalOptions="FillAndExpand">
+				<ListView.ItemTemplate>
+					<DataTemplate>
+						<ViewCell>
+							<ContentView Padding="5">
+								<Frame Style="{StaticResource frameStyle}">
+									<StackLayout Margin="5"
+												BackgroundColor="White"
+												Orientation="Horizontal">
 
+										<Image Source="{Binding Photo}"/>
+
+										<StackLayout>
+											<StackLayout Orientation="Horizontal">
+												<Label Text="{Binding Path=FirstName}"
+													   Style="{StaticResource labelFIOStyle}"/>
+												<Label Text="{Binding Path=LastName}"
+													   Style="{StaticResource labelFIOStyle}"/>
+											</StackLayout>
+											<StackLayout Orientation="Vertical">
+												<StackLayout Orientation="Horizontal">
+													<Label Text="ID Страницы: "
+														   Style="{StaticResource labelStaticInfoStyle}"/>
+													<Label Text="{Binding Id}"
+														   Style="{StaticResource labelDataInfoStyle}"/>
+												</StackLayout>
+												<StackLayout Orientation="Horizontal">
+													<Label Text="День рождения: "
+														   Style="{StaticResource labelStaticInfoStyle}"/>
+													<Label Text="{Binding BirthDate}"
+														   Style="{StaticResource labelDataInfoStyle}"/>
+												</StackLayout>
+												<StackLayout Orientation="Horizontal">
+													<Label Text="Страна: "
+														    Style="{StaticResource labelStaticInfoStyle}"/>
+													<Label Text="{Binding Country}"
+														   Style="{StaticResource labelDataInfoStyle}"/>
+												</StackLayout>
+												<StackLayout Orientation="Horizontal">
+													<Label Text="Город: "
+														   Style="{StaticResource labelStaticInfoStyle}"/>
+													<Label Text="{Binding City}"
+														   Style="{StaticResource labelDataInfoStyle}"/>
+												</StackLayout>
+											</StackLayout>
+										</StackLayout>
+									</StackLayout>
+								</Frame>
+							</ContentView>
+						</ViewCell>
+					</DataTemplate>
+				</ListView.ItemTemplate>
+			</ListView>
+		</StackLayout>
+	</ContentPage.Content>
 </ContentPage>
