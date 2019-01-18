@@ -41,19 +41,19 @@
 												<StackLayout Orientation="Horizontal">
 													<Label Text="День рождения: "
 														   Style="{StaticResource labelStaticInfoStyle}"/>
-													<Label Text="{Binding BirthDate}"
+													<Label Text="{Binding BirthDate, StringFormat='{0}'}"
 														   Style="{StaticResource labelDataInfoStyle}"/>
 												</StackLayout>
 												<StackLayout Orientation="Horizontal">
 													<Label Text="Страна: "
 														    Style="{StaticResource labelStaticInfoStyle}"/>
-													<Label Text="{Binding Country}"
+                                                    <Label Text="{Binding Country, StringFormat='{0}'}"
 														   Style="{StaticResource labelDataInfoStyle}"/>
 												</StackLayout>
 												<StackLayout Orientation="Horizontal">
 													<Label Text="Город: "
 														   Style="{StaticResource labelStaticInfoStyle}"/>
-													<Label Text="{Binding City}"
+                                                    <Label Text="{Binding City, StringFormat='{0}'}"
 														   Style="{StaticResource labelDataInfoStyle}"/>
 												</StackLayout>
 											</StackLayout>

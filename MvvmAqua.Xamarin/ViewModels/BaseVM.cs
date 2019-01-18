@@ -19,6 +19,17 @@ namespace MvvmAqua.Xamarin.ViewModels
 			}
 		}
 
+		/// <summary>
+		/// Индикация, что выполняется продолжительная процедура и "форма занята"
+		/// Отображается ActivityIndicator, элементы ввода недоступны для редактирования
+		/// </summary>
+		private bool isBusy;
+		public bool IsBusy
+		{
+			get => isBusy;
+			set => SetProperty(ref isBusy, value);
+		}
+
 		protected virtual void NavigationServiceInitialization() { }
 	}
 }

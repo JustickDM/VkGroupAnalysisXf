@@ -15,6 +15,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\DataLayer\DataLayer.csproj" />
+    <ProjectReference Include="..\..\MvvmAqua.Xamarin\MvvmAqua.Xamarin.csproj" />
     <ProjectReference Include="..\..\VkApi\VkApi.csproj" />
   </ItemGroup>
 
