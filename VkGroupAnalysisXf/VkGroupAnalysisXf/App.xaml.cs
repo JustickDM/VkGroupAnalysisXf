@@ -1,6 +1,4 @@
-﻿using VkGroupAnalysisXf.ViewModels;
-
-using Xamarin.Forms;
+﻿using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
 [assembly: XamlCompilation(XamlCompilationOptions.Compile)]
@@ -12,7 +10,7 @@ namespace VkGroupAnalysisXf
 		{
 			InitializeComponent();
 
-			MainPage = new MainPage() { BindingContext = new MainViewModel()};
+			MainPage = new MainPage();
 		}
 
 		protected override void OnStart()

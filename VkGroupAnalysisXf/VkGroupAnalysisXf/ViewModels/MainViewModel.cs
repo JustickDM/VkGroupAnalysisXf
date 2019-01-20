@@ -1,16 +1,17 @@
 ﻿using System.Collections.ObjectModel;
 using System.Linq;
 
-using MvvmAqua.Xamarin.ViewModels;
+using VkGroupAnalysisXf.ViewModels.Base;
 using DataLayer.Converters;
 using DataLayer.Models;
 using VkApi;
 using VkApi.Classes;
 using VkApi.Enums;
+using Xamarin.Forms;
 
 namespace VkGroupAnalysisXf.ViewModels
 {
-	public class MainViewModel: BaseVM
+	public class MainViewModel : BaseVM
 	{
 		private const string GroupId = "56222995";
 
@@ -36,8 +37,9 @@ namespace VkGroupAnalysisXf.ViewModels
 			set => SetProperty(ref users, value);
 		}
 
-		public MainViewModel()
+		public MainViewModel(INavigation navigation)
 		{
+			Navigation = navigation;
 			UsersInGroupAsync();
 		}
 
