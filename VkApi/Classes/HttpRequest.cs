@@ -76,7 +76,7 @@ namespace VkApi.Classes
 				var response = request.GetResponse();
 
 				return response != null
-					? new StreamReader(request.GetResponse().GetResponseStream(), Encoding.UTF8).ReadToEnd()
+					? new StreamReader(response.GetResponseStream(), Encoding.UTF8).ReadToEnd()
 					: string.Empty;
 			});
 		}
